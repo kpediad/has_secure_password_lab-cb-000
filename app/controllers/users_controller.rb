@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def create
     if params[:password] != params[:password_confirmation]
-      redirect_to new_user_path 
+      redirect_to new_user_path
     else
       new_user = User.create(user_params)
       session[:user_id] = new_user.id
